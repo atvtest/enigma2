@@ -1386,22 +1386,14 @@ RESULT eDVBResourceManager::allocateChannel(const eDVBChannelID &channelid, eUse
 	if (!simulate && m_cached_channel)
 	{
 		eDVBChannel *cache_chan = (eDVBChannel*)&(*m_cached_channel);
-		if((m_boxtype != WETEKPLAY && m_boxtype != WETEKPLAY2 && m_boxtype != WETEKHUB) && (channelid==cache_chan->getChannelID()))
+#ifndef HAVE_AMLOGIC
+		if(channelid==cache_chan->getChannelID())
 		{
-			ePtr<iDVBFrontend> fe;
-			m_cached_channel->getFrontend(fe);
-			int slotid = fe->readFrontendData(iFrontendInformation_ENUMS::frontendNumber);
-			if (frontendPreferenceAllowsChannelUse(channelid,m_cached_channel,simulate))
-			{
-				eDebug("[eDVBResourceManager] use cached_channel, frontend=%d",slotid);
-				channel = m_cached_channel;
-				return 0;
-			}
-			else
-			{
-				eDebug("[eDVBResourceManager] strict frontend preference policy, don't use cached_channel, frontend=%d",slotid);
-			}
+			eDebug("[eDVBResourceManager] use cached_channel");
+			channel = m_cached_channel;
+			return 0;
 		}
+#endif
 		m_cached_channel_state_changed_conn.disconnect();
 		m_cached_channel=0;
 		m_releaseCachedChannelTimer->stop();
@@ -1413,19 +1405,9 @@ RESULT eDVBResourceManager::allocateChannel(const eDVBChannelID &channelid, eUse
 		eDebugNoSimulate("[eDVBResourceManager] available channel.. %04x:%04x", i->m_channel_id.transport_stream_id.get(), i->m_channel_id.original_network_id.get());
 		if (i->m_channel_id == channelid)
 		{
-			ePtr<iDVBFrontend> fe;
-			i->m_channel->getFrontend(fe);
-			int slotid = fe->readFrontendData(iFrontendInformation_ENUMS::frontendNumber);
-			if (frontendPreferenceAllowsChannelUse(channelid,i->m_channel,simulate))
-			{
-				eDebugNoSimulate("[eDVBResourceManager] found shared channel.. i=%d, frontend=%d (preferred=%d)",std::distance(active_channels.begin(), i),slotid,eDVBFrontend::getPreferredFrontend());
-				channel = i->m_channel;
-				return 0;
-			}
-			else
-			{
-				eDebugNoSimulate("[eDVBResourceManager] strict frontend preference policy, don't use shared channel.. i=%d, frontend=%d (preferred=%d)",std::distance(active_channels.begin(), i),slotid,eDVBFrontend::getPreferredFrontend());
-			}
+			eDebugNoSimulate("[eDVBResourceManager] found shared channel..");
+			channel = i->m_channel;
+			return 0;
 		}
 	}
 
@@ -1450,10 +1432,8 @@ RESULT eDVBResourceManager::allocateChannel(const eDVBChannelID &channelid, eUse
 
 	int err = allocateFrontend(fe, feparm, simulate);
 	if (err)
-	{
-		eDebugNoSimulate("[eDVBResourceManager] can't allocate frontend!");
 		return err;
-	}
+
 	RESULT res;
 	ePtr<eDVBChannel> ch = new eDVBChannel(this, fe);
 
@@ -1461,7 +1441,6 @@ RESULT eDVBResourceManager::allocateChannel(const eDVBChannelID &channelid, eUse
 	if (res)
 	{
 		channel = 0;
-		eDebugNoSimulate("[eDVBResourceManager] channel id not found!");
 		return errChidNotFound;
 	}
 
