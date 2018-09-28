@@ -74,5 +74,5 @@
     
 ----------
 
-NOTE: you need to modify the git source of enigma2 (openatv.conf)
+NOTE: you need to modify openatv.conf  (version 6.1, distro type release, the git source of enigma2) 
 
