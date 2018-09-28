@@ -71,3 +71,8 @@
 11 - Finally you can start building a image
 
     MACHINE=mutant2400 DISTRO=openatv DISTRO_TYPE=release make image
+    
+----------
+
+NOTE: you need to modify the git source of enigma2 (openatv.conf)
+
