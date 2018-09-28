@@ -70,7 +70,9 @@
 ----------
 11 - Finally you can start building a image
 
-    MACHINE=mutant2400 DISTRO=openatv DISTRO_TYPE=release make image
+(example: i have a zgemma h5)
+
+    MACHINE=zgemmah5 DISTRO=openatv DISTRO_TYPE=release make image
     
 ----------
 
