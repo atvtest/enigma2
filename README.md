@@ -78,5 +78,5 @@
 
 NOTE: you need to modify openatv.conf  (version 6.1, distro type release, the git source of enigma2) 
 
-Flashable zip for zgemma h5, custom personal (old) build: https://anonfile.com/h0S2Hadbb2/openatv-6.1-zgemmah5-20180301_usb.zip
+Flashable zip for zgemma h5, custom (old) build: https://anonfile.com/h0S2Hadbb2/openatv-6.1-zgemmah5-20180301_usb.zip
 
