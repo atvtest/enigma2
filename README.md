@@ -80,3 +80,5 @@ NOTE: you need to modify openatv.conf  (version 6.1, distro type release, the gi
 
 Flashable zip for zgemma h5, custom (old) build: https://anonfile.com/h0S2Hadbb2/openatv-6.1-zgemmah5-20180301_usb.zip
 
+Create your sky-q like solution on your network https://kodi.wiki/view/Enigma2
+
