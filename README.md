@@ -76,6 +76,14 @@
     
 ----------
 
+12 - Optional infos
+
+ERROR: No space left on device or exceeds fs.inotify.max_user_watches?
+
+change value to:
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+sysctl -n -w fs.inotify.max_user_watches=524288
+
 NOTE: you need to modify openatv.conf  (version 6.1, distro type release, the git source of enigma2) 
 
 Flashable zip for zgemma h5, custom (old) build: https://anonfile.com/h0S2Hadbb2/openatv-6.1-zgemmah5-20180301_usb.zip
