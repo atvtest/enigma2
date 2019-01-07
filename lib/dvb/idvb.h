@@ -281,7 +281,7 @@ public:
 		cVPID, cMPEGAPID, cTPID, cPCRPID, cAC3PID,
 		cVTYPE, cACHANNEL, cAC3DELAY, cPCMDELAY,
 		cSUBTITLE, cAACHEAPID=12, cDDPPID, cAACAPID,
-		cDATAPID, cPMTPID, cacheMax
+		cDATAPID, cPMTPID, cDRAAPID, cAC4PID, cacheMax
 	};
 
 	int getCacheEntry(cacheID);
@@ -430,6 +430,7 @@ public:
 	virtual SWIG_VOID(RESULT) getDVBT(eDVBFrontendParametersTerrestrial &SWIG_OUTPUT) const = 0;
 	virtual SWIG_VOID(RESULT) getATSC(eDVBFrontendParametersATSC &SWIG_OUTPUT) const = 0;
 	virtual SWIG_VOID(RESULT) getFlags(unsigned int &SWIG_OUTPUT) const = 0;
+	virtual RESULT setDVBT(const eDVBFrontendParametersTerrestrial &p) = 0;
 #ifndef SWIG
 	virtual SWIG_VOID(RESULT) calculateDifference(const iDVBFrontendParameters *parm, int &, bool exact) const = 0;
 	virtual SWIG_VOID(RESULT) getHash(unsigned long &) const = 0;
@@ -521,7 +522,7 @@ public:
 class iDVBFrontend: public iDVBFrontend_ENUMS, public iObject
 {
 public:
-	virtual RESULT tune(const iDVBFrontendParameters &where)=0;
+	virtual RESULT tune(const iDVBFrontendParameters &where, bool blindscan = false)=0;
 	virtual int closeFrontend(bool force = false, bool no_delayed = false)=0;
 	virtual void reopenFrontend()=0;
 #ifndef SWIG
@@ -763,13 +764,15 @@ public:
 		enum { eventUnknown = 0,
 			eventSizeChanged = VIDEO_EVENT_SIZE_CHANGED,
 			eventFrameRateChanged = VIDEO_EVENT_FRAME_RATE_CHANGED,
-			eventProgressiveChanged = 16
+			eventProgressiveChanged = 16,
+			eventGammaChanged = 17
 		} type;
 		unsigned char aspect;
 		unsigned short height;
 		unsigned short width;
 		bool progressive;
 		unsigned short framerate;
+		unsigned short gamma;
 	};
 
 	virtual RESULT connectVideoEvent(const sigc::slot1<void, struct videoEvent> &event, ePtr<eConnection> &connection) = 0;
@@ -779,6 +782,7 @@ public:
 	virtual int getVideoProgressive() = 0;
 	virtual int getVideoFrameRate() = 0;
 	virtual int getVideoAspect() = 0;
+	virtual int getVideoGamma() = 0;
 };
 
 #endif //SWIG

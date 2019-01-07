@@ -69,8 +69,7 @@ def addSkin(name, scope = SCOPE_SKIN):
 	if fileExists(filename):
 		mpath = os.path.dirname(filename) + "/"
 		try:
-			file = open(filename, 'r')
-			dom_skins.append((mpath, xml.etree.cElementTree.parse(file).getroot()))
+			dom_skins.append((mpath, xml.etree.cElementTree.parse(filename).getroot()))
 		except:
 			print "[SKIN ERROR] error in %s" % filename
 			return False
@@ -372,10 +371,11 @@ def loadPixmap(path, desktop):
 		path = path[:option]
 		cached = "cached" in options
 	ptr = LoadPixmap(morphRcImagePath(path), desktop, cached)
-	if ptr is None:
-#		raise SkinError("pixmap file %s not found!" % path)
-		print("pixmap file %s not found!" % path)
-	return ptr
+	if ptr is not None:
+		return ptr
+	print("pixmap file %s not found!" % path)
+
+
 
 pngcache = []
 def cachemenu():
@@ -431,6 +431,8 @@ class AttributeParser:
 				print "[Skin] attribute \"%s\" with wrong (or unknown) value \"%s\" in object of type \"%s\"" % (attrib, value, self.guiObject.__class__.__name__)
 
 	def conditional(self, value):
+		pass
+	def objectTypes(self, value):
 		pass
 	def position(self, value):
 		if isinstance(value, tuple):
@@ -786,6 +788,11 @@ def loadSingleSkinData(desktop, skin, path_prefix):
 					resolved_font = resolveFilename(SCOPE_ACTIVE_LCDSKIN, filename)
 			addFont(resolved_font, name, scale, is_replacement, render)
 			#print "Font: ", resolved_font, name, scale, is_replacement
+
+		fallbackFont = resolveFilename(SCOPE_FONTS, "fallback.font", path_prefix=path_prefix)
+		if fileExists(fallbackFont):
+			addFont(fallbackFont, "Fallback", 100, -1, 0)
+
 		for alias in c.findall("alias"):
 			get = alias.attrib.get
 			try:
@@ -886,7 +893,10 @@ def loadSingleSkinData(desktop, skin, path_prefix):
 					if fileExists(resolveFilename(SCOPE_SKIN_IMAGE, filename, path_prefix=path_prefix)):
 						pngfile = resolveFilename(SCOPE_SKIN_IMAGE, filename, path_prefix=path_prefix)
 					png = loadPixmap(pngfile, desktop)
-					style.setPixmap(eWindowStyleSkinned.__dict__[bsName], eWindowStyleSkinned.__dict__[bpName], png)
+					try:
+						style.setPixmap(eWindowStyleSkinned.__dict__[bsName], eWindowStyleSkinned.__dict__[bpName], png)
+					except:
+						pass
 				#print "  borderset:", bpName, filename
 		for color in windowstyle.findall("color"):
 			get_attr = color.attrib.get
@@ -1291,6 +1301,9 @@ def readSkin(screen, skin, names, desktop):
 		def process(w):
 			conditional = w.attrib.get('conditional')
 			if conditional and not [i for i in conditional.split(",") if i in screen.keys()]:
+				return
+			objecttypes = w.attrib.get('objectTypes', '').split(",")
+			if len(objecttypes) > 1 and (objecttypes[0] not in screen.keys() or not [i for i in objecttypes[1:] if i == screen[objecttypes[0]].__class__.__name__]):
 				return
 			p = processors.get(w.tag, process_none)
 			try:

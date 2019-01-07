@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openATV / enigma2\n"
-"POT-Creation-Date: 2017-12-31 05:30+0300\n"
-"PO-Revision-Date: 2017-12-31 05:35+0300\n"
+"POT-Creation-Date: 2018-04-03 21:25+0300\n"
+"PO-Revision-Date: 2018-04-03 21:30+0300\n"
 "Last-Translator: TM2TURK | by thawtes <thawtes@gmail.com>\n"
 "Language-Team: TM2TURK | by thawtes <thawtes@gmail.com>\n"
 "Language: en_US\n"
@@ -13,6 +13,7 @@ msgstr ""
 "X-SourceCharset: UTF-8\n"
 "X-Generated: TM2TURK by thawtes\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "  Menu key : Select quad channel"
 msgstr "  Menu key : Select quad channel"
@@ -943,6 +944,9 @@ msgstr "< Default >"
 
 msgid "< Default with Picon >"
 msgstr "< Default with Picon >"
+
+msgid "< User Skin >"
+msgstr "< User Skin >"
 
 msgid "<Current movielist location>"
 msgstr "<Current movielist location>"
@@ -2281,6 +2285,9 @@ msgstr "better"
 
 msgid "Big PiP"
 msgstr "Big PiP"
+
+msgid "Bitrate"
+msgstr "Bitrate"
 
 msgid "Bitrate:"
 msgstr "Bitrate:"
@@ -3981,6 +3988,9 @@ msgstr "Cron Manager"
 
 msgid "CronManager"
 msgstr "CronManager"
+
+msgid "CronTimer"
+msgstr "CronTimer"
 
 msgid "CronTimers"
 msgstr "CronTimers"
@@ -6043,6 +6053,9 @@ msgstr "FP Upgrade"
 msgid "FP upgrade required"
 msgstr "FP upgrade required"
 
+msgid "Frame rate"
+msgstr "Frame rate"
+
 msgid "Frame size in full view"
 msgstr "Frame size in full view"
 
@@ -6353,6 +6366,13 @@ msgid "Guard interval"
 msgstr "Guard interval"
 
 msgid ""
+"GUI needs a restart to apply a new language\n"
+"Do you want to restart the GUI now?"
+msgstr ""
+"GUI needs a restart to apply a new language\n"
+"Do you want to restart the GUI now?"
+
+msgid ""
 "GUI needs a restart to apply a new skin\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
@@ -6413,18 +6433,10 @@ msgid "HD list"
 msgstr "HD list"
 
 msgid ""
-"HD11/HD51/HD1100/HD1200/HD1265/HD1500/HD500C/HD530C/et7x00/et8500/et7000mini"
-msgstr ""
-"HD11/HD51/HD1100/HD1200/HD1265/HD1500/HD500C/HD530C/et7x00/et8500/et7000mini"
-
-msgid "HD2400"
-msgstr "HD2400"
-
-msgid ""
-"HDD = Do you want to make an USB-back-up image on HDD? \n"
+"HDD = Do you want to make a USB-back-up image on HDD? \n"
 "This only takes 2 or 10 minutes and is fully automatic."
 msgstr ""
-"HDD = Do you want to make an USB-back-up image on HDD? \n"
+"HDD = Do you want to make a USB-back-up image on HDD? \n"
 "This only takes 2 or 10 minutes and is fully automatic."
 
 msgid "HDMI"
@@ -6450,6 +6462,12 @@ msgstr "HDMI Colorspace"
 
 msgid "HDMIin"
 msgstr "HDMIin"
+
+msgid "HDMI Recording"
+msgstr "HDMI Recording"
+
+msgid "HDMI-IN Recording settings"
+msgstr "HDMI-IN Recording settings"
 
 msgid "Hebrew"
 msgstr "Hebrew"
@@ -6879,8 +6897,12 @@ msgstr ""
 "In expert mode, configure which tuners will be preferred for recordings, "
 "when more than one tuner is available."
 
-msgid "In the Standby blinking Clock on the LCD Display"
-msgstr "In the Standby blinking Clock on the LCD Display"
+msgid ""
+"In most cases this should be set to No. Only enable if you have a very "
+"specific need."
+msgstr ""
+"In most cases this should be set to No. Only enable if you have a very "
+"specific need."
 
 msgid ""
 "In order to record a timer, a tuner was freed successfully:\n"
@@ -6891,6 +6913,9 @@ msgstr ""
 
 msgid "In progress"
 msgstr "In progress"
+
+msgid "In the Standby blinking Clock on the LCD Display"
+msgstr "In the Standby blinking Clock on the LCD Display"
 
 msgid "Inactive"
 msgstr "Inactive"
@@ -6943,6 +6968,9 @@ msgstr "Index"
 
 msgid "Index allocated:"
 msgstr "Index allocated:"
+
+msgid "Indonesian"
+msgstr "Indonesian"
 
 msgid "Info"
 msgstr "Info"
@@ -7156,6 +7184,9 @@ msgstr "Interface"
 
 msgid "Interface: "
 msgstr "Interface: "
+
+msgid "Interlaced"
+msgstr "Interlaced"
 
 msgid "Intermediate"
 msgstr "Intermediate"
@@ -7645,6 +7676,9 @@ msgstr "Logs older then the set no of days will be deleted."
 msgid "Logs settings"
 msgstr "Logs settings"
 
+msgid "Log python stack trace on spinner (may have side effects) ?"
+msgstr "Log python stack trace on spinner (may have side effects) ?"
+
 msgid "long"
 msgstr "long"
 
@@ -7803,6 +7837,9 @@ msgstr "Maxdown: "
 
 msgid "Maximum no of days:"
 msgstr "Maximum no of days:"
+
+msgid "Maximum minutes to jump %d !"
+msgstr "Maximum minutes to jump %d !"
 
 msgid "Maximum number of days in EPG"
 msgstr "Maximum number of days in EPG"
@@ -9120,6 +9157,12 @@ msgstr "OpenVPN Setup"
 msgid "OpenVpn Setup"
 msgstr "OpenVpn Setup"
 
+msgid "Option"
+msgstr "Option"
+
+msgid "Option long"
+msgstr "Option long"
+
 msgid "Option to disable picons on the Infobar"
 msgstr "Option to disable picons on the Infobar"
 
@@ -9629,8 +9672,8 @@ msgstr "Please enter the correct pin code"
 msgid "Please enter the old PIN code"
 msgstr "Please enter the old PIN code"
 
-msgid "Please enter the your personal feed URL"
-msgstr "Please enter the your personal feed URL"
+msgid "Please enter your personal feed URL"
+msgstr "Please enter your personal feed URL"
 
 msgid "Please follow the instructions on the TV"
 msgstr "Please follow the instructions on the TV"
@@ -10733,6 +10776,9 @@ msgstr "Release Notes"
 
 msgid "reliable"
 msgstr "reliable"
+
+msgid "reliable, retune"
+msgstr "reliable, retune"
 
 msgid "religion"
 msgstr "religion"
@@ -12192,6 +12238,9 @@ msgstr ""
 "Sets the root folder of movie list, to remove the '..' from benign shown in "
 "that folder."
 
+msgid "Set to yes ONLY TEMPORARILY for debugging the root cause of a spinner."
+msgstr "Set to yes ONLY TEMPORARILY for debugging the root cause of a spinner."
+
 msgid "Setting Restored "
 msgstr "Setting Restored "
 
@@ -12690,6 +12739,9 @@ msgstr "Show HDMI Output Resulution"
 msgid "Show HDMI-Output Res"
 msgstr "Show HDMI-Output Res"
 
+msgid "Show HDMIRecord setup.."
+msgstr "Show HDMIRecord setup.."
+
 msgid "Show help"
 msgstr "Show help"
 
@@ -13136,8 +13188,8 @@ msgstr "Skin setup"
 msgid "Skins"
 msgstr "Skins"
 
-msgid "skins"
-msgstr "skins"
+msgid "skin"
+msgstr "skin"
 
 msgid "Skinselector"
 msgstr "Skinselector"
@@ -14142,6 +14194,9 @@ msgstr "The %s %s reads the stored EPG data every (hours)."
 msgid "The %s %s stores the EPG data every (hours)."
 msgstr "The %s %s stores the EPG data every (hours)."
 
+msgid "The aspect ratio of the recording."
+msgstr "The aspect ratio of the recording."
+
 msgid ""
 "The AutoTimer plugin is not installed!\n"
 "Please install it."
@@ -14160,6 +14215,13 @@ msgstr ""
 
 msgid "The backup failed. Please choose a different backup location."
 msgstr "The backup failed. Please choose a different backup location."
+
+msgid ""
+"The bitrate of the video encoder. Larger value improves quality and "
+"increases file size."
+msgstr ""
+"The bitrate of the video encoder. Larger value improves quality and "
+"increases file size."
 
 msgid ""
 "The buffer time for timeshift exceeds the specified limit in the settings.\n"
@@ -14256,6 +14318,20 @@ msgstr ""
 
 msgid "The following files were found..."
 msgstr "The following files were found..."
+
+msgid ""
+"The frame rate of the recording. Ideally, this will match the frame rate of "
+"the source or be an integer multiple. If in doubt, set to 60, which should "
+"work with most sources."
+msgstr ""
+"The frame rate of the recording. Ideally, this will match the frame rate of "
+"the source or be an integer multiple. If in doubt, set to 60, which should "
+"work with most sources."
+
+msgid ""
+"The height of the picture. The input will be scaled to match this value."
+msgstr ""
+"The height of the picture. The input will be scaled to match this value."
 
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "The image or kernel will be flashing and auto booted in few minutes.\n"
@@ -14408,6 +14484,10 @@ msgstr ""
 "The VideoMode plugin is not installed!\n"
 "Please install it."
 
+msgid "The width of the picture. The input will be scaled to match this value."
+msgstr ""
+"The width of the picture. The input will be scaled to match this value."
+
 msgid ""
 "The wireless LAN plugin is not installed!\n"
 "Please install it and choose what you want to do next."
@@ -14513,6 +14593,9 @@ msgstr "This allows you to show extensions modules in downloads"
 msgid "This allows you to show kernel modules in downloads"
 msgstr "This allows you to show kernel modules in downloads"
 
+msgid "This allows you to show languages in downloads"
+msgstr "This allows you to show languages in downloads"
+
 msgid "This allows you to show lcd skins in downloads"
 msgstr "This allows you to show lcd skins in downloads"
 
@@ -14531,8 +14614,8 @@ msgstr "This allows you to show security modules in downloads"
 msgid "This allows you to show settings modules in downloads"
 msgstr "This allows you to show settings modules in downloads"
 
-msgid "This allows you to show skins modules in downloads"
-msgstr "This allows you to show skins modules in downloads"
+msgid "This allows you to show skin modules in downloads"
+msgstr "This allows you to show skin modules in downloads"
 
 msgid "This allows you to show softcams modules in downloads"
 msgstr "This allows you to show softcams modules in downloads"
@@ -15251,6 +15334,9 @@ msgstr "Track"
 msgid "traditional (fast)"
 msgstr "traditional (fast)"
 
+msgid "traditional (fast), retune"
+msgstr "traditional (fast), retune"
+
 msgid "Traditional Chinese"
 msgstr "Traditional Chinese"
 
@@ -15710,12 +15796,12 @@ msgid ""
 "USB = Do you want to make a back-up on USB?\n"
 "This will take between 4 and 15 minutes depending on the used filesystem and "
 "is fully automatic.\n"
-"Make sure you first insert an USB flash drive before you select USB."
+"Make sure you first insert a USB flash drive before you select USB."
 msgstr ""
 "USB = Do you want to make a back-up on USB?\n"
 "This will take between 4 and 15 minutes depending on the used filesystem and "
 "is fully automatic.\n"
-"Make sure you first insert an USB flash drive before you select USB."
+"Make sure you first insert a USB flash drive before you select USB."
 
 msgid "USB Stick"
 msgstr "USB Stick"

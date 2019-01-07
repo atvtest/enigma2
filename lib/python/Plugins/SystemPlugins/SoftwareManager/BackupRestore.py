@@ -42,9 +42,9 @@ BLACKLISTED = ShellCompatibleFunctions.BLACKLISTED
 
 def InitConfig():
 	# BACKUPFILES contains all files and folders to back up, for wildcard entries ALWAYS use eEnv_resolve_multi!
-	BACKUPFILES = ['/etc/enigma2/', '/etc/CCcam.cfg', '/usr/keys/', '/usr/lib/enigma2/python/Plugins/Extensions/MyMetrixLite/MyMetrixLiteBackup.dat',
+	BACKUPFILES = ['/etc/enigma2/', '/etc/CCcam.cfg', '/usr/keys/',
 		'/etc/davfs2/', '/etc/tuxbox/config/', '/etc/auto.network', '/etc/feeds.xml', '/etc/machine-id', '/etc/rc.local', 
-		'/etc/openvpn/', '/etc/ipsec.conf', '/etc/ipsec.secrets', '/etc/ipsec.user', '/etc/strongswan.conf', 
+		'/etc/openvpn/', '/etc/ipsec.conf', '/etc/ipsec.secrets', '/etc/ipsec.user', '/etc/strongswan.conf', '/etc/vtuner.conf',
 		'/etc/default/crond', '/etc/dropbear/', '/etc/default/dropbear', '/home/', '/etc/samba/', '/etc/fstab', '/etc/inadyn.conf', 
 		'/etc/network/interfaces', '/etc/wpa_supplicant.conf', '/etc/wpa_supplicant.ath0.conf', '/etc/opkg/secret-feed.conf',
 		'/etc/wpa_supplicant.wlan0.conf', '/etc/wpa_supplicant.wlan1.conf', '/etc/resolv.conf', '/etc/default_gw', '/etc/hostname', '/etc/epgimport/', '/etc/exports',
@@ -53,11 +53,14 @@ def InitConfig():
 		'/usr/lib/enigma2/python/Plugins/Extensions/VMC/youtv.pwd',
 		'/usr/lib/enigma2/python/Plugins/Extensions/VMC/vod.config',
 		'/usr/share/enigma2/MetrixHD/skinparts/',
+		'/usr/share/enigma2/display/skin_display_usr.xml',
+		'/usr/share/enigma2/display/userskin.png',
 		'/usr/lib/enigma2/python/Plugins/Extensions/SpecialJump/keymap_user.xml',
 		'/usr/lib/enigma2/python/Plugins/Extensions/MP3Browser/db',
 		'/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/db',
 		'/usr/lib/enigma2/python/Plugins/Extensions/TVSpielfilm/db', '/etc/ConfFS',
 		'/etc/rc3.d/S99tuner.sh',
+		'/usr/bin/enigma2_pre_start.sh',
 		eEnv.resolve("${datadir}/enigma2/keymap.usr"),
 		eEnv.resolve("${datadir}/enigma2/keymap_usermod.xml")]\
 		+eEnv_resolve_multi("${datadir}/enigma2/*/mySkin_off/*.xml")\

@@ -3451,19 +3451,16 @@ PyObject *eEPGCache::search(ePyObject arg)
 					case 'T':
 					case 'P':
 					case 'W':
-						// needServiceEvent=true;
-						needServiceEvent = false;
+						needServiceEvent=true;
 						break;
 					case 'N':
-						// must_get_service_name = 1;
-						must_get_service_name = 2;
+						must_get_service_name = 1;
 						break;
 					case 'n':
 						must_get_service_name = 2;
 						break;
 					case 'R':
-						// must_get_service_reference = true;
-						must_get_service_reference = false;
+						must_get_service_reference = true;
 						break;
 					default:
 						break;

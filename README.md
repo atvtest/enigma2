@@ -2,9 +2,9 @@
 
 > Ubuntu 16.04.1 LTS (GNU/3.14.32-xxxx-grs-ipv6-64)
 
-## openATV 6.1 is build using oe-alliance build-environment and several git repositories: ##
+## openATV 6.2 is build using oe-alliance build-environment and several git repositories: ##
 
-> [https://github.com/oe-alliance/oe-alliance-core/tree/4.1](https://github.com/oe-alliance/oe-alliance-core/tree/4.1 "OE-Alliance")
+> [https://github.com/oe-alliance/oe-alliance-core/tree/4.2](https://github.com/oe-alliance/oe-alliance-core/tree/4.2 "OE-Alliance")
 > 
 > [https://github.com/openatv/enigma2/tree/DEV](https://github.com/openatv/enigma2/tree/DEV "openATV E2")
 > 
@@ -19,8 +19,7 @@
 
 1 - Install packages on your buildserver
 
-    sudo apt-get install -y autoconf automake bison bzip2 curl cvs diffstat flex g++ gawk gcc gettext git-core gzip help2man ncurses-bin ncurses-dev libc6-dev libtool make texinfo patch perl pkg-config subversion tar texi2html wget zlib1g-dev chrpath libxml2-utils xsltproc libglib2.0-dev python-setuptools zip info coreutils diffstat chrpath libproc-processtable-perl libperl4-corelibs-perl sshpass default-jre default-jre-headless java-common libserf-dev qemu quilt
-----------
+    sudo apt-get install -y autoconf automake bison bzip2 curl cvs diffstat flex g++ gawk gcc gettext git-core gzip help2man ncurses-bin ncurses-dev libc6-dev libtool make texinfo patch perl pkg-config subversion tar texi2html wget zlib1g-dev chrpath libxml2-utils xsltproc libglib2.0-dev python-setuptools zip info coreutils diffstat chrpath libproc-processtable-perl libperl4-corelibs-perl sshpass default-jre default-jre-headless java-common libserf-dev qemu quilt libssl-dev ----------
 2 - Set your shell to /bin/bash.
 
     sudo dpkg-reconfigure dash
@@ -55,7 +54,10 @@
 ----------
 8 - Clone oe-alliance git
 
-    git clone git://github.com/oe-alliance/build-enviroment.git -b 4.1
+    git clone git://github.com/oe-alliance/build-enviroment.git -b 4.2
+    
+    NOTE: you need to modify openatv.conf (version 6.2, distro type release, my git source of enigma2)
+
 
 ----------
 9 - Switch to folder build-enviroment
@@ -70,23 +72,14 @@
 ----------
 11 - Finally you can start building a image
 
-(example: i have a zgemma h5)
-
     MACHINE=zgemmah5 DISTRO=openatv DISTRO_TYPE=release make image
-    
+
 ----------
+12 - Optional Infos
 
-12 - Optional infos
+    ERROR: No space left on device or exceeds fs.inotify.max_user_watches?
 
-ERROR: No space left on device or exceeds fs.inotify.max_user_watches?
-
-change value to:
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
-sysctl -n -w fs.inotify.max_user_watches=524288
-
-NOTE: you need to modify openatv.conf  (version 6.1, distro type release, the git source of enigma2) 
-
-Flashable zip for zgemma h5, custom (old) build: https://anonfile.com/h0S2Hadbb2/openatv-6.1-zgemmah5-20180301_usb.zip
-
-Create your sky-q like solution on your network https://kodi.wiki/view/Enigma2
+    change value to:
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+    sysctl -n -w fs.inotify.max_user_watches=524288
 
