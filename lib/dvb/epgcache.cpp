@@ -83,13 +83,9 @@ extern const uint32_t crc32_table[256];
 
 const eServiceReference &handleGroup(const eServiceReference &ref)
 {
-	if (ref.flags & eServiceReference::isGroup)
-	{
-		ePtr<eDVBResourceManager> res;
-		if (!eDVBResourceManager::getInstance(res))
-		{
-			ePtr<iDVBChannelList> db;
-			if (!res->getChannelList(db))
+	ePtr<eDVBResourceManager> res;
+	ePtr<iDVBChannelList> db;
+	if (!res->getChannelList(db))
 			{
 				eBouquet *bouquet = NULL;
 				if (!db->getBouquet(ref, bouquet))
@@ -99,8 +95,6 @@ const eServiceReference &handleGroup(const eServiceReference &ref)
 						return *it;
 				}
 			}
-		}
-	}
 	return ref;
 }
 
